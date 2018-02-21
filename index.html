@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Workout Schedule</title>
+	<link type="text/css" rel="stylesheet" href="workout.css" />
+	<link href="https://fonts.googleapis.com/css?family=Abel|Bowlby+One+SC" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+</head>
+
+<body>
+
+	<div id="container">
+
+		<h1>Workouts</h1>
+
+		<select id="mobile-nav" onchange="display()">
+			<option>Monday</option>
+			<option>Tuesday</option>
+			<option>Wednesday</option>
+			<option>Thursday</option>
+			<option>Friday</option>
+		</select>
+
+
+		<div id="workout-display">
+
+			<div id="monday" class="display"/>
+				
+				<h2>pull</h2>
+
+				<p>pullups - 3 sets</p>
+
+				<p>pull negatives - 3 sets</p>
+
+				<p>leg/knee lifts - 2 sets</p>
+
+				<p>pull holds - 2 sets</p>
+
+			</div>
+
+			<div id="tuesday" class="display hidden"/>
+				
+				<h2>push</h2>
+
+				<p>pushups - 3 sets</p>
+
+				<p>tri pushups - 3 sets</p>
+
+				<p>shoulder touches - 3 sets</p>
+				
+				<p>dips - 2 sets</p>
+
+			</div>
+
+			<div id="wednesday" class="display hidden"/>
+				
+				<h2>legs</h2>
+
+				<p>assisted pistol squat - 3 sets</p>
+
+				<p>walking lunge - 3 sets</p>
+
+				<p>leg raises - 3 sets</p>
+
+				<p>plank - 2 sets</p>
+
+				<p>russian twists - 2 sets</p>
+
+			</div>
+
+			<div id="thursday" class="display hidden"/>
+
+				<h2>pull</h2>
+
+				<p>pullups - 3 sets</p>
+
+				<p>pull negatives - 3 sets</p>
+
+				<p>chin ups - 2 sets</p>
+
+				<p>pull holds - 2 sets</p>
+
+
+			</div>
+
+			<div id="friday" class="display hidden"/>
+				
+				<h2>push</h2>
+
+				<p>pushups - 3 sets</p>
+
+				<p>wide pushups - 3 sets</p>
+
+				<p>shoulder touches - 3 sets</p>
+				
+				<p>handstands - 2 sets</p>
+
+			</div>
+
+		</div>
+
+
+	</div>
+
+	<script>
+		
+		var div = document.querySelector('#workout-display');
+		var paragraphs = document.querySelectorAll('#workout-display p');
+		var select = document.querySelector('select');
+		var displays = document.querySelectorAll('.display');
+		var dayName;
+
+		div.addEventListener('click', function (e) {
+			for (i = 0; i < paragraphs.length; i++) {
+				if (paragraphs[i] == e.target) {
+					e.target.classList.toggle('strikethrough');
+				}
+			}
+		});
+
+		checkVisiblity = function (d) {
+			
+			for ( i = 0; i < displays.length; i ++) {
+				if (!displays[i].classList.contains('hidden')) {
+					displays[i].classList.add('hidden');
+				}
+			}
+
+			d.classList.remove('hidden');
+
+		};
+
+		display = function () {
+
+			switch (select.value) {
+				case 'Monday':
+					var day = document.getElementById('monday');
+					checkVisiblity(day);
+					break;
+
+				case 'Tuesday':
+					var day = document.getElementById('tuesday');
+					checkVisiblity(day);
+					break;
+
+				case 'Wednesday':
+					var day = document.getElementById('wednesday');
+					checkVisiblity(day);
+					break;
+
+				case 'Thursday':
+					var day = document.getElementById('thursday');
+					checkVisiblity(day);
+					break;
+
+				case 'Friday':
+					var day = document.getElementById('friday');
+					checkVisiblity(day);
+					break;
+			}
+
+		};
+
+	</script>
+
+</body>
+
+</html>

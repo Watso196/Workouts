@@ -1,0 +1,53 @@
+
+html, body {
+	width: 100%;
+	height: 100%;
+	font-family: 'Abel', sans-serif;
+	font-size: 1.2em;
+}
+
+#container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+h1 {
+	font-family: 'Bowlby One SC', sans-serif;
+	font-size: 2em;
+	text-align: center;
+}
+
+h2 {
+	font-family: 'Bowlby One SC', sans-serif;
+	font-size: 1.5em;
+}
+
+p {
+	display: block;
+	cursor: pointer;
+}
+
+select {
+	border: 2px solid black;
+	background-color: white;
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	font-family: 'Abel', sans-serif;
+	font-size: 1em;
+}
+
+#workout-display {
+	text-align: center;
+}
+
+
+.hidden {
+	display: none;
+}
+
+.strikethrough {
+	text-decoration: line-through;
+}
+
+
